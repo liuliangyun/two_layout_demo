@@ -1,0 +1,41 @@
+body{
+  text-align: center;
+}
+
+.header, .footer{
+  background-color: darkturquoise;
+}
+
+.container{
+  /*因为main、left、right都设置了float，脱离了文档流，所以需要把中间位置留出来，不然footer会挤上去*/
+  overflow: hidden;
+  /*将left和right左右两边100px的宽度留出来*/
+  padding: 0 100px;
+}
+
+.main{
+  background-color: crimson;
+  /*设置main宽度自适应，不然left和right会挤上去*/
+  width: 100%;
+  float: left;
+}
+
+.left{
+  background-color: coral;
+  width: 100px;
+  float: left;
+  /*使left上移到上一行的最左边，并无视padding，强制左移100px*/
+  margin-left: -100%;
+  position: relative;
+  left: -100px;
+}
+
+.right{
+  background-color: pink;
+  width: 100px;
+  float: left;
+  /*使right上移到上一行的最右边，并无视padding，强制右移100px*/
+  margin-left: -100px;
+  position: relative;
+  right: -100px;
+}
